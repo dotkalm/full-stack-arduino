@@ -1,20 +1,20 @@
-import { NextRequest } from "next/server";
 import five from "johnny-five";
 
-export async function GET(request: Request) {
-    try {
-        console.log(five.Board);
-        const board = new five.Board();
-        const boardCallback = () => {
-            const led = new five.Led(13);
-            led.blink(500);
-        }
-        board.on("ready", boardCallback);
-        return new Response("Hello from Johnny Five API!");
-    } catch (err) {
-        console.error(err);
-        return new Response("Error initializing Johnny Five", { status: 500 });
-    }
+export async function GET() {
+  try {
+    console.log(five.Board);
+    const board = new five.Board();
+    const boardCallback = () => {
+      const led = new five.Led(13);
+      led.on();
+      console.log(led);
+    };
+    board.on("ready", boardCallback);
+    return new Response("Hello from Johnny Five API!");
+  } catch (err) {
+    console.error(err);
+    return new Response("Error initializing Johnny Five", { status: 500 });
+  }
 }
 
 /*
