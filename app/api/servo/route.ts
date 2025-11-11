@@ -9,7 +9,7 @@ export async function GET() {
     }
 
     const angle = Math.floor(Math.random() * 360);
-    console.log("call servo! " + angle);
+    console.log("set servo to angle: " + angle);
     const servo = new five.Servo(10);
     servo.to(angle);
 

@@ -1,10 +1,14 @@
-import Button from "./components/Button";
+import LEDOnButton from "./components/LEDOnButton";
+import LEDOffButton from "./components/LEDOffButton";
 import ServoButton from "./components/ServoButton";
 
 export default function Home() {
   return (
     <>
-      <Button />
+      <LEDOnButton />
+      <br />
+      <LEDOffButton />
+      <br />
       <ServoButton />
     </>
   );
