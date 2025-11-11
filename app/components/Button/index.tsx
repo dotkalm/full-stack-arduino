@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
-
 const Button = () => {
   const onClick = async () => {
     try {
-      const response = await fetch("api/johnnyfive");
+      const response = await fetch("api/led");
       const data = await response.text();
       console.log(data);
       /*if (data === "ON") {

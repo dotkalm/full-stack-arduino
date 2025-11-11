@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { boardManager } from "./lib/board-manager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +12,9 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Initialize board on startup
+boardManager.initialize().catch(console.error);
 
 export const metadata: Metadata = {
   title: "Create Next App",
